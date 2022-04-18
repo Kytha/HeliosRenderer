@@ -1,10 +1,2 @@
 
-[submodule "HeliosEngine/Vendors/glfw"]
-	path = HeliosEngine/Vendors/glfw
-	url = https://github.com/glfw/glfw.git
-[submodule "HeliosEngine/Vendors/imgui"]
-	path = HeliosEngine/Vendors/imgui
-	url = https://github.com/Kytha/imgui.git
-[submodule "HeliosEngine/Vendors/glm"]
-	path = HeliosEngine/Vendors/glm
-	url = https://github.com/g-truc/glm.git
+
