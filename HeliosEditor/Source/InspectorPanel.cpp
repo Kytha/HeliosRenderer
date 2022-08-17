@@ -1,5 +1,5 @@
+#include "Helios.h"
 #include "Panel.h"
-#include "imgui.h"
 
 namespace Helios
 {
@@ -14,7 +14,7 @@ namespace Helios
 
     void InspectorPanel::Render()
     {
-        ImGui::Begin("Inspector");
+        ImGui::Begin(ICON_FA_CUBES " Inspector");
         ImGui::Text("Inspector");
         ImGui::End();
     }

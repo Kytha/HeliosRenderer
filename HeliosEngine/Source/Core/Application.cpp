@@ -12,7 +12,7 @@ namespace Helios
     Application::Application(const std::string& name) : m_Name(name)   
     {
         WindowProps props = {name, 1920, 1080, BIND_FN(OnEvent)};
-        m_Window = OS::CreateWindow(props);
+        m_Window = OS::CreateOSWindow(props);
         m_ImGuiContext.Initialize(*m_Window);
     }
 
@@ -45,6 +45,7 @@ namespace Helios
     {
         while(m_IsRunning)
         {
+            HL_ZONE_SCOPED;
             double currentTime = m_Window->GetTimer();
             double delta = m_Window->GetTimer() - m_PreviousFrameTime;
             m_PreviousFrameTime = currentTime;
@@ -62,6 +63,7 @@ namespace Helios
             }
             m_ImGuiContext.End(*m_Window);
             m_Window->Update();
+            HL_FRAME_MARK;
         }
     }
 

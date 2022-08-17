@@ -12,3 +12,6 @@
 [submodule "HeliosEngine/Vendors/tracy"]
 	path = HeliosEngine/Vendors/tracy
 	url = https://github.com/wolfpld/tracy.git
+[submodule "HeliosEngine/Vendors/spdlog"]
+	path = HeliosEngine/Vendors/spdlog
+	url = https://github.com/gabime/spdlog.git

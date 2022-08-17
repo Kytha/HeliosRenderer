@@ -12,7 +12,6 @@ namespace Helios
         std::string name;
         unsigned int width, height;
         bool vSync;
-
         EventCallbackFn eventCallbackFn;
     };
 
@@ -26,6 +25,8 @@ namespace Helios
         inline virtual void *GetNativeWindow() const { return m_Handle; }
         inline unsigned int GetWidth() const override { return m_Data.width; }
 		inline unsigned int GetHeight() const override { return m_Data.height; }
+        void SetVSync(bool vSync) override;
+        bool IsVSync() const override;
         
     private:
         GLFWwindow* m_Handle;

@@ -1,5 +1,5 @@
+#include "Helios.h"
 #include "Panel.h"
-#include "imgui.h"
 
 namespace Helios
 {
@@ -14,7 +14,7 @@ namespace Helios
 
     void EnvironmentPanel::Render()
     {
-        ImGui::Begin("Environment");
+        ImGui::Begin(ICON_FA_SUN_O " Environment");
         ImGui::Text("Environment");
         ImGui::End();
     }

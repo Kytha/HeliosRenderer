@@ -1,9 +1,8 @@
+#include "Helios.h"
 #include "EditorLayer.h"
 #include "HeliosEditor.h"
 #include "Panel.h"
-#include "Core/OperatingSystem.h"
 #include "iostream"
-#include "UI/Core.h"
 #include "glm/glm.hpp"
 
 namespace Helios
@@ -27,6 +26,7 @@ namespace Helios
 
     void EditorLayer::OnUIRender()
     {
+        HL_ZONE_SCOPED;
         static bool show = true;
         static bool opt_fullscreen = true;
         static bool opt_padding = false;
@@ -238,7 +238,11 @@ namespace Helios
 
     void EditorLayer::OnAttach()
     {
-
+        #if defined(NDEBUG)
+            HL_INFO("Welcome to Helios Renderer v0.1 [Release]" ICON_FA_ROCKET);
+        #else
+            HL_INFO("Welcome to Helios Renderer v0.1 [Debug] " ICON_FA_WRENCH);
+        #endif
     }
 
     void EditorLayer::OnDetach()
@@ -248,7 +252,7 @@ namespace Helios
 
     void EditorLayer::OnUpdate(double dt)
     {
-
+        HL_ZONE_SCOPED;
     }
 
     void EditorLayer::OnEvent(Event& event)

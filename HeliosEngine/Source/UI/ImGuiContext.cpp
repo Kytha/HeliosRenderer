@@ -3,6 +3,7 @@
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
+#include "Icons.h"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -44,6 +45,14 @@ namespace Helios
         //io.Fonts->AddFontFromFileTTF("Assets/Fonts/Roboto/Roboto-Regular.ttf", fontSize);
         io.FontDefault = io.Fonts->AddFontFromFileTTF("Assets/Fonts/Roboto/Roboto-Regular.ttf", fontSize);
 
+          // Merge icons into default tool font
+
+        ImFontConfig config;
+        config.MergeMode = true;
+        config.GlyphMinAdvanceX = 13.0f; // Use if you want to make the icon monospaced
+        static const ImWchar icon_ranges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };
+        io.Fonts->AddFontFromFileTTF("Assets/Fonts/FontAwesome/fontawesome-webfont.ttf", 16.0f, &config, icon_ranges);
+  
         // Setup Dear ImGui style
         ImGui::StyleColorsDark();
 
@@ -72,12 +81,14 @@ namespace Helios
 
     void ImGuiContext::Begin()
     {
+        HL_ZONE_SCOPED;
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
     }
     void ImGuiContext::End(Window& window)
     {
+        HL_ZONE_SCOPED;
         ImGuiIO &io = ImGui::GetIO();
         io.DisplaySize = ImVec2((float)window.GetWidth(), (float)window.GetHeight());
 

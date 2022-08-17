@@ -1,5 +1,5 @@
+#include "Helios.h"
 #include "Panel.h"
-#include "imgui.h"
 
 namespace Helios
 {
@@ -14,7 +14,7 @@ namespace Helios
 
     void AssetBrowserPanel::Render()
     {
-        ImGui::Begin("Asset Browser");
+        ImGui::Begin(ICON_FA_FOLDER_OPEN " Asset Browser");
         ImGui::Text("Asset Browser");
         ImGui::End();
     }

@@ -1,4 +1,5 @@
 #pragma once
+#include "UI/ConsoleComponent.h"
 
 namespace Helios
 {
@@ -48,6 +49,8 @@ namespace Helios
         ConsolePanel();
         virtual ~ConsolePanel();
         void Render() override;
+    private:
+        std::shared_ptr<ConsoleComponent> m_Console; 
     };
 }
 

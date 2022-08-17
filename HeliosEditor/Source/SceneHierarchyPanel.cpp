@@ -1,5 +1,5 @@
+#include "Helios.h"
 #include "Panel.h"
-#include "imgui.h"
 
 namespace Helios
 {
@@ -14,7 +14,7 @@ namespace Helios
 
     void SceneHierarchyPanel::Render()
     {
-        ImGui::Begin("Scene Hierarchy");
+        ImGui::Begin(ICON_FA_SITEMAP " Scene Hierarchy");
         ImGui::Text("Scene Hierarchy");
         ImGui::End();
     }

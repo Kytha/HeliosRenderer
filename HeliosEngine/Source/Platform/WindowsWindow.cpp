@@ -12,6 +12,7 @@ namespace Helios
         m_Data.height = props.height;
         m_Data.width = props.width;
         m_Data.name = props.name;
+        m_Data.vSync = false;
         m_Data.eventCallbackFn = props.eventCallbackFn;
 
         glfwWindowHint(GLFW_MAXIMIZED , GL_TRUE);
@@ -86,6 +87,7 @@ namespace Helios
                 data.eventCallbackFn(e);
             }
         );
+        SetVSync(false);
     }
 
     WindowsWindow::~WindowsWindow()
@@ -100,7 +102,22 @@ namespace Helios
     }
     void WindowsWindow::Update()
     {
+        HL_ZONE_SCOPED;
         glfwSwapBuffers(m_Handle);
         glfwPollEvents();
+    }
+
+    void WindowsWindow::SetVSync(bool vSync)
+    {
+        if(vSync)
+            glfwSwapInterval(1);
+        else
+            glfwSwapInterval(0);
+        m_Data.vSync = vSync;
+    }
+
+    bool WindowsWindow::IsVSync() const
+    {
+        return m_Data.vSync;
     }
 }

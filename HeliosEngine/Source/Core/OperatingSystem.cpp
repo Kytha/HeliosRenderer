@@ -23,11 +23,11 @@ namespace Helios
 
     void OS::Run()
     {
-        for(auto& app : m_Applications)
+        for(auto& app : GetOS().m_Applications)
         {
             app.second->Run();
             delete app.second;
-            m_Applications.erase(app.first);
+            GetOS().m_Applications.erase(app.first);
         }
     }
     
@@ -60,7 +60,7 @@ namespace Helios
         std::cout << "Application does not exist!";
     }
 
-    Window* OS::CreateWindow(WindowProps props) {
+    Window* OS::CreateOSWindow(WindowProps props) {
         return GetOS().CreateNativeWindow(props);
     }
 }

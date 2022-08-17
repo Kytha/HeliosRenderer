@@ -14,6 +14,7 @@ namespace Helios
         int width = 1920;
         int height = 1080;
         EventCallbackFn eventCallbackFn;
+        std::string iconPath = "";
     };
 
     class Window
@@ -26,6 +27,8 @@ namespace Helios
         virtual void* GetNativeWindow() const = 0;
         virtual unsigned int GetWidth() const = 0;
 		virtual unsigned int GetHeight() const = 0;
+        virtual void SetVSync(bool vSync) = 0;
+        virtual bool IsVSync() const = 0;
 
     protected:
         std::string m_Name;

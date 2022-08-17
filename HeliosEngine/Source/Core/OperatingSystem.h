@@ -22,10 +22,10 @@ namespace Helios
             auto app = new ApplicationClass(std::forward<Args>(arguments)...);    
             GetOS().m_Applications[app->GetName()] = app;
         }
-        static Window* CreateWindow(WindowProps props);
+        static Window* CreateOSWindow(WindowProps props);
+        static void Run();
     public:
         virtual void NativeOpenURL(const std::string& url) = 0;
-        virtual void Run();
     private:
         static OS* s_Instance;
         std::unordered_map<std::string, Application*> m_Applications;
