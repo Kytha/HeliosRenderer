@@ -9,3 +9,6 @@
 [submodule "HeliosEngine/Vendors/glfw"]
 	path = HeliosEngine/Vendors/glfw
 	url = https://github.com/glfw/glfw.git
+[submodule "HeliosEngine/Vendors/tracy"]
+	path = HeliosEngine/Vendors/tracy
+	url = https://github.com/wolfpld/tracy.git
