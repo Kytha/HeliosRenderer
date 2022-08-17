@@ -3,34 +3,34 @@ OPTION(PROFILE_RELEASE "Option to include profiler for release builds" OFF)
 ########################### SOURCE CODE ########################################
 SET ( HELIOS_SOURCE
     Source/Core/Application.cpp
+    Source/Core/LayerStack.cpp
+    Source/Core/Log.cpp
     Source/Core/OperatingSystem.cpp
     Source/Core/Window.cpp
-    Source/Core/LayerStack.cpp
     Source/Platform/WindowsOS.cpp
     Source/Platform/WindowsWindow.cpp
-    Source/UI/ImGuiContext.cpp
-    Source/UI/ImGuiBuild.cpp
-    Source/Core/Log.cpp
     Source/UI/ConsoleComponent.cpp
+    Source/UI/ImGuiBuild.cpp
+    Source/UI/ImGuiContext.cpp
   )
 
 SET ( HELIOS_HEADERS
-    Source/helios.h
-    Source/Core/Core.h
     Source/Core/Application.h
-    Source/Core/Window.h
-    Source/Core/OperatingSystem.h
-    Source/Platform/WindowsOS.h
+    Source/Core/Buffer.h
+    Source/Core/Core.h
     Source/Core/Layer.h
     Source/Core/LayerStack.h
-    Source/UI/ImGuiContext.h
     Source/Core/Log.h
+    Source/Core/OperatingSystem.h
     Source/Core/Ref.h
-    Source/Core/Buffer.h
+    Source/Core/Window.h
+    Source/Platform/WindowsOS.h
     Source/UI/Colours.h
     Source/UI/ConsoleComponent.h
-    Source/UI/Icons.h
     Source/UI/Core.h
+    Source/UI/Icons.h
+    Source/UI/ImGuiContext.h
+    Source/helios.h
   )
 
 ############################# DEPENDENCIES ###########################################

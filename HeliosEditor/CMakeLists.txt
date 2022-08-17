@@ -1,16 +1,16 @@
 SET ( HELIOS_EDITOR_SOURCE
-    Source/EditorLayer.cpp
-    Source/HeliosEditor.cpp
-    Source/InspectorPanel.cpp
-    Source/EnvironmentPanel.cpp
-    Source/SceneHierarchyPanel.cpp
     Source/AssetBrowserPanel.cpp
     Source/ConsolePanel.cpp
+    Source/EditorLayer.cpp
+    Source/EnvironmentPanel.cpp
+    Source/HeliosEditor.cpp
+    Source/InspectorPanel.cpp
+    Source/SceneHierarchyPanel.cpp
   )
 
 SET ( HELIOS_EDITOR_HEADERS
-    Source/HeliosEditor.h
     Source/EditorLayer.h
+    Source/HeliosEditor.h
     Source/Panel.h
   )
 
